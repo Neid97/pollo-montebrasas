@@ -1,0 +1,20 @@
+/* ============================================================
+   LAYOUT.CSS — Estructura general de la página
+   Controla el flujo entre header fijo, contenido y nav inferior.
+   ============================================================ */
+
+/* ── Contenido principal ─────────────────────────────────── */
+/*
+  padding-top: empuja el contenido debajo del header fijo.
+  padding-bottom: deja espacio para el sticky-cta + nav-bottom apilados.
+*/
+.main-content {
+  padding-top: var(--header-height);
+  padding-bottom: calc(var(--sticky-cta-height) + var(--nav-bottom-height));
+}
+
+/* ── Secciones con padding horizontal estándar ───────────── */
+.section {
+  padding-inline: var(--space-6);
+  padding-block: var(--space-8);
+}

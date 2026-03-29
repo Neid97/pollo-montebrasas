@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pollo Montebrasas — Tradición a la Leña</title>
+
+  <!-- 1. Fuentes -->
+  <link rel="stylesheet" href="css/fonts.css" />
+
+  <!-- 2. Tokens de diseño -->
+  <link rel="stylesheet" href="css/variables.css" />
+
+  <!-- 3. Reset y base global -->
+  <link rel="stylesheet" href="css/base.css" />
+
+  <!-- 4. Layout general -->
+  <link rel="stylesheet" href="css/layout.css" />
+
+  <!-- 5. Componentes (orden: top → bottom en la página) -->
+  <link rel="stylesheet" href="css/header.css" />
+  <link rel="stylesheet" href="css/hero.css" />
+  <link rel="stylesheet" href="css/menu.css" />
+  <link rel="stylesheet" href="css/guarniciones.css" />
+  <link rel="stylesheet" href="css/contacto.css" />
+  <link rel="stylesheet" href="css/sticky-cta.css" />
+  <link rel="stylesheet" href="css/nav-bottom.css" />
+</head>
+<body>
+
+  <!-- ══════════════════════════════════════════════════════
+       HEADER — Barra superior fija
+       Block: .top-bar
+  ══════════════════════════════════════════════════════ -->
+  <header class="top-bar">
+
+    <!-- Marca -->
+    <div class="top-bar__brand">
+      <span class="top-bar__icon material-symbols-outlined" aria-hidden="true">menu</span>
+      <h1 class="top-bar__title">Pollo Montebrasas</h1>
+    </div>
+
+    <!-- Acciones -->
+    <div class="top-bar__actions">
+      <a href="tel:12345678" class="top-bar__action-btn" aria-label="Llamar al restaurante">
+        <span class="material-symbols-outlined" aria-hidden="true">call</span>
+      </a>
+    </div>
+
+  </header>
+
+
+  <!-- ══════════════════════════════════════════════════════
+       CONTENIDO PRINCIPAL
+  ══════════════════════════════════════════════════════ -->
+  <main class="main-content">
+
+    <!-- ── Sección 1: Hero ────────────────────────────── -->
+    <section class="hero" aria-label="Presentación del restaurante">
+
+      <!-- Fondo con imagen -->
+      <div class="hero__bg" aria-hidden="true">
+        <img
+          class="hero__img"
+          src="https://lh3.googleusercontent.com/aida-public/AB6AXuBi_5PFbbGzrtQfV3uKpdH_o2k4gJNzhKJhnSGfOLPET5lHn8QWsJpgJa_8ia_XyjzHPLjcfIy2YOAIVkbozjgh-TK8_Q7XhlGcfgqzH-BTy-dx3f2K7GyG6rPJ-ghNoTqdCDuAI9XiWYiOuwKwqBGyqADuuQSFcK6ELGMjn00hKpFlAXgORIxgHdcGRyreDYR08WCI8pEpKdp4EOVKk6F62A05oICR19bz5EeSjdM1hsLuyY1dFohKM0HmKS0BcSGqXCOucCvy6Nvb"
+          alt="Pollo asado en brasas con piel dorada crujiente y vapor de carbón"
+        />
+        <div class="hero__overlay"></div>
+      </div>
+
+      <!-- Contenido textual -->
+      <div class="hero__content">
+        <span class="hero__badge">Tradición a la Leña</span>
+        <h2 class="hero__title">
+          Sabor que <br />
+          <span class="hero__title--accent">Alimenta</span>
+        </h2>
+        <p class="hero__subtitle">
+          Pollo asado lentamente sobre brasas seleccionadas para un término perfecto.
+        </p>
+      </div>
+
+    </section>
+
+
+    <!-- ── Sección 2: Especialidades ──────────────────── -->
+    <section class="section" aria-labelledby="menu-title">
+
+      <!-- Encabezado de sección -->
+      <div class="menu-header">
+        <div class="menu-header__labels">
+          <span class="menu-header__eyebrow">Menú Principal</span>
+          <h2 class="menu-header__title" id="menu-title">Especialidades</h2>
+        </div>
+        <div class="menu-header__accent" aria-hidden="true"></div>
+      </div>
+
+      <!-- Lista de productos -->
+      <ul class="menu-list">
+
+        <!-- Producto 1: Pollo Entero (tarjeta vertical destacada) -->
+        <li>
+          <article class="menu-card">
+
+            <div class="menu-card__media">
+              <img
+                class="menu-card__img"
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuCSJh6zIXuIXf5Soy1bXmXX_Zzt6-IQbWCbMz5qWGlBNsoecrQzWSnafAEZVglDBVqST2RU2k06PD1qmWDwpDXeEvb03K9OUGAQxTnl4ygzh7WHOVoEo2CB5qV0QTLJNrjbd7BWYXeSNXN2Bv0YjbX2Z0j9C830Qe9lYO46Gwuc9hl5eV99BLpGI06EW-LC5wcwma-WW2HjnSfHrqlW0E8pd78RjpkgBbJL2Gj2-udD_K4lJ84t09OYGUP-X1KPiIjgECUhjxq7Xg4R"
+                alt="Pollo entero asado servido en platón rústico con guarniciones"
+              />
+              <span class="menu-card__price" aria-label="Precio: 240 pesos">$240</span>
+            </div>
+
+            <div class="menu-card__body">
+              <h3 class="menu-card__title">Pollo Entero</h3>
+              <p class="menu-card__description">
+                Incluye papas a la francesa, chiles asados, cebollitas cambray y nuestra salsa secreta de la casa.
+              </p>
+              <button class="menu-card__btn menu-card__btn--primary" type="button">
+                <span class="material-symbols-outlined" aria-hidden="true" style="font-variation-settings: 'FILL' 1; font-size: 1rem;">shopping_cart</span>
+                Agregar al Pedido
+              </button>
+            </div>
+
+          </article>
+        </li>
+
+        <!-- Producto 2: 1/2 Pollo -->
+        <li>
+          <article class="menu-card">
+
+            <div class="menu-card__media">
+              <img
+                class="menu-card__img"
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuBfEktsPX1D0cgTF_BOIpE0tjSBHb2V35D8SopOSpxdM7hc3PsdzHFJO1UHq-a6z-8mi0v2fNQRyBp7X6-VZXu0QkJRBECk5Xn5y32wTBNaRzakPGLQxoY0-0RGJM4bLaDWORy4cLI-QkZUAuwtXc_DdEcgg07P4NizW3DW5kFcu2fC2QciOFGIuDdYuHyHQTtWuSvcy-5kJf3xpckaRt1K-gCiiuuh1lfbW-1me_vYMI2J1fhhtMPHlK4FbKPJNLLHecwPDa934mJP"
+                alt="Medio pollo asado con especias sobre plato de piedra"
+              />
+              <span class="menu-card__price" aria-label="Precio: 135 pesos">$135</span>
+            </div>
+
+            <div class="menu-card__body">
+              <h3 class="menu-card__title">1/2 Pollo</h3>
+              <p class="menu-card__description">
+                La porción ideal. Acompañado de papas doradas, chiles y cebollas asadas con tortilla recién hecha.
+              </p>
+              <button class="menu-card__btn menu-card__btn--ghost" type="button">
+                <span class="material-symbols-outlined" aria-hidden="true" style="font-size: 1rem;">add_circle</span>
+                Personalizar
+              </button>
+            </div>
+
+          </article>
+        </li>
+
+        <!-- Producto 3: Pollo Individual (tarjeta compacta horizontal) -->
+        <li>
+          <article class="menu-card menu-card--compact">
+
+            <div class="menu-card__media">
+              <img
+                class="menu-card__img"
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuAPe9Pttv9hBnPB28_MY9OWDtp4aLGt572iTN--6reKAhARRJY_7T_Jp7UaOmXC3uBTiQLhpfJVuTK7REd0gbMejCjYMxtSyjLW8jV8TIpqbIt2H6uRR4gOWXZ63qHapasefuxlueh0HbTka9a_GAUY1Wfs-zPL_hKUYagekqysypMff0JYNk492_QPZIOGpP2VfG6hb4pNjmfr6KTXYL4_YcGCY6YHOuPHdI1bEhUUkN50MpXgzFHJgAwOze2zHYQBiIEskLhe7iuy"
+                alt="Porción individual de pollo asado con papas fritas"
+              />
+            </div>
+
+            <div class="menu-card__body">
+              <div class="menu-card__header">
+                <h3 class="menu-card__title">Pollo Individual</h3>
+                <span class="menu-card__price-inline" aria-label="Precio: 85 pesos">$85</span>
+              </div>
+              <p class="menu-card__description">
+                Pieza de pollo a elección con guarnición de papas y cebollitas.
+              </p>
+            </div>
+
+          </article>
+        </li>
+
+      </ul>
+    </section>
+
+
+    <!-- ── Sección 3: Guarniciones ─────────────────────── -->
+    <section class="section sides" aria-labelledby="sides-title">
+
+      <h2 class="sides__title" id="sides-title">Guarniciones</h2>
+
+      <ul class="sides__list" role="list">
+        <li>
+          <button class="sides__chip sides__chip--active" type="button">Papas</button>
+        </li>
+        <li>
+          <button class="sides__chip" type="button">Chile</button>
+        </li>
+        <li>
+          <button class="sides__chip" type="button">Cebolla</button>
+        </li>
+        <li>
+          <button class="sides__chip" type="button">Arroz</button>
+        </li>
+      </ul>
+
+    </section>
+
+
+    <!-- ── Sección 4: Contacto / Ubicación ────────────── -->
+    <section class="contact" aria-labelledby="contact-title">
+
+      <h2 class="contact__title" id="contact-title">Visítanos</h2>
+
+      <div class="contact__map">
+        <img
+          class="contact__map-img"
+          src="https://lh3.googleusercontent.com/aida-public/AB6AXuDVHIXD8d6zMsX5P4CvfU0divEO0d91CKGnVsHZSVoCpZVb4gjAXGXA3Au8_v8UMG0odKOjY_upJ931UOnl2Dki0wbpFxPu44s6xYs8dyOu9hpDy50Wq6C9tekbJlVcXEEvuMLDodjUQPoPA7eD7ABzwf5w3OHy7eldO4rCvsmw-4ZBnz6uJF482OPSz_CUW3--IgxkVDaOpPZtih2-p6fKFAL1tmPVI-MoA18Pg58ed7PTm4fICtFaForaTR9Aw3_vVj9jW9qSZF6c"
+          alt="Mapa de ubicación del restaurante en la Ciudad de México"
+        />
+      </div>
+
+      <address class="contact__address">
+        Av. Insurgentes Sur 1450, Col. Del Valle, CDMX.
+      </address>
+
+      <ul class="contact__social-list" aria-label="Redes sociales">
+        <li>
+          <a class="contact__social-link" href="#" aria-label="Facebook de Pollo Montebrasas">Facebook</a>
+        </li>
+        <li>
+          <a class="contact__social-link" href="#" aria-label="Instagram de Pollo Montebrasas">Instagram</a>
+        </li>
+        <li>
+          <a class="contact__social-link" href="#" aria-label="WhatsApp de Pollo Montebrasas">WhatsApp</a>
+        </li>
+      </ul>
+
+      <p class="contact__copyright">
+        &copy; 2024 Pollo Montebrasas. Sabor a la Leña.
+      </p>
+
+    </section>
+
+  </main>
+
+
+  <!-- ══════════════════════════════════════════════════════
+       STICKY CTA — Banner flotante de pedido a domicilio
+       Block: .delivery-cta
+  ══════════════════════════════════════════════════════ -->
+  <aside class="delivery-cta" aria-label="Pedir a domicilio">
+    <div class="delivery-cta__card">
+
+      <div class="delivery-cta__text">
+        <span class="delivery-cta__label">¿Hambre?</span>
+        <p class="delivery-cta__heading">Pide a Domicilio</p>
+      </div>
+
+      <div class="delivery-cta__actions">
+        <a class="delivery-cta__btn-phone" href="tel:12345678" aria-label="Llamar para pedir">
+          <span class="material-symbols-outlined" aria-hidden="true">call</span>
+        </a>
+        <a class="delivery-cta__btn-whatsapp" href="#" aria-label="Pedir por WhatsApp">
+          <span class="material-symbols-outlined" aria-hidden="true" style="font-variation-settings: 'FILL' 1; font-size: 1rem;">chat</span>
+          WhatsApp
+        </a>
+      </div>
+
+    </div>
+  </aside>
+
+
+  <!-- ══════════════════════════════════════════════════════
+       NAV BOTTOM — Barra de navegación inferior
+       Block: .bottom-nav
+  ══════════════════════════════════════════════════════ -->
+  <nav class="bottom-nav" aria-label="Navegación principal">
+
+    <a href="#menu-title" class="bottom-nav__item bottom-nav__item--active" aria-current="page">
+      <span class="material-symbols-outlined" aria-hidden="true" style="font-variation-settings: 'FILL' 1;">restaurant_menu</span>
+      <span class="bottom-nav__label">Menú</span>
+    </a>
+
+    <a href="#" class="bottom-nav__item">
+      <span class="material-symbols-outlined" aria-hidden="true">local_fire_department</span>
+      <span class="bottom-nav__label">Combos</span>
+    </a>
+
+    <a href="#" class="bottom-nav__item">
+      <span class="material-symbols-outlined" aria-hidden="true">confirmation_number</span>
+      <span class="bottom-nav__label">Promo</span>
+    </a>
+
+    <a href="#contact-title" class="bottom-nav__item">
+      <span class="material-symbols-outlined" aria-hidden="true">distance</span>
+      <span class="bottom-nav__label">Ubicación</span>
+    </a>
+
+  </nav>
+
+
+  <!-- JS al final del body, después del HTML ──────────── -->
+  <script src="js/main.js"></script>
+
+</body>
+</html>

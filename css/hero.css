@@ -1,0 +1,82 @@
+/* ============================================================
+   HERO.CSS — Sección principal con imagen de fondo
+   Block: .hero
+   ============================================================ */
+
+/* ── Block ───────────────────────────────────────────────── */
+.hero {
+  position: relative;
+  height: 530px;
+  display: flex;
+  align-items: flex-end;
+  padding: 0 var(--space-6) var(--space-12);
+  overflow: hidden;
+}
+
+/* ── Element: imagen de fondo ────────────────────────────── */
+.hero__bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.hero__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* ── Element: overlay degradado sobre la imagen ──────────── */
+.hero__overlay {
+  position: absolute;
+  inset: 0;
+  background: var(--gradient-hero);
+}
+
+/* ── Element: contenido textual ──────────────────────────── */
+.hero__content {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+}
+
+/* ── Element: badge/etiqueta superior ────────────────────── */
+.hero__badge {
+  display: inline-block;
+  background-color: var(--color-tertiary-container);
+  color: var(--color-on-tertiary-container);
+  padding: var(--space-1) var(--space-3);
+  border-radius: var(--radius-pill);
+  font-family: var(--font-headline);
+  font-size: var(--text-xs);
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  margin-bottom: var(--space-4);
+}
+
+/* ── Element: título principal ───────────────────────────── */
+.hero__title {
+  font-family: var(--font-headline);
+  font-size: var(--text-5xl);
+  font-weight: 900;
+  color: var(--color-on-surface);
+  line-height: 1;
+  letter-spacing: -0.03em;
+  text-transform: uppercase;
+  font-style: italic;
+}
+
+/* ── Modifier: palabra resaltada en primario ─────────────── */
+.hero__title--accent {
+  color: var(--color-primary);
+}
+
+/* ── Element: subtítulo descriptivo ─────────────────────── */
+.hero__subtitle {
+  margin-top: var(--space-4);
+  color: var(--color-secondary);
+  font-weight: 500;
+  line-height: 1.6;
+  max-width: 280px;
+}

@@ -1,0 +1,48 @@
+/* ============================================================
+   GUARNICIONES.CSS — Sección de chips de acompañamientos
+   Block: .sides
+   ============================================================ */
+
+/* ── Block ───────────────────────────────────────────────── */
+.sides {
+  margin-bottom: var(--space-12);
+}
+
+/* ── Element: título de sección ──────────────────────────── */
+.sides__title {
+  font-family: var(--font-headline);
+  font-size: var(--text-xs);
+  font-weight: 700;
+  color: var(--color-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  margin-bottom: var(--space-6);
+}
+
+/* ── Element: contenedor de chips ────────────────────────── */
+.sides__list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+}
+
+/* ── Element: chip individual ────────────────────────────── */
+.sides__chip {
+  padding: var(--space-2) var(--space-5);
+  border-radius: var(--radius-pill);
+  font-size: var(--text-xs);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  background-color: var(--color-surface-container-highest);
+  color: var(--color-on-surface);
+  transition: background-color var(--transition-base),
+              color var(--transition-base);
+  cursor: default;
+}
+
+/* ── Modifier: chip activo/seleccionado ──────────────────── */
+.sides__chip--active {
+  background-color: var(--color-primary-container);
+  color: var(--color-on-primary-container);
+}

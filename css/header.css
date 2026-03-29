@@ -1,0 +1,67 @@
+/* ============================================================
+   HEADER.CSS — Barra de navegación superior fija
+   Block: .top-bar
+   ============================================================ */
+
+/* ── Block ───────────────────────────────────────────────── */
+.top-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 50;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--space-4) var(--space-6);
+  height: var(--header-height);
+  background-color: rgba(19, 19, 19, 0.8);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+}
+
+/* ── Element: lado izquierdo (ícono + marca) ─────────────── */
+.top-bar__brand {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.top-bar__icon {
+  color: var(--color-primary);
+}
+
+.top-bar__title {
+  font-family: var(--font-headline);
+  font-size: var(--text-xl);
+  font-weight: 900;
+  color: var(--color-primary);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* ── Element: acciones del lado derecho ──────────────────── */
+.top-bar__actions {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+}
+
+.top-bar__action-btn {
+  color: var(--color-primary);
+  transition: opacity var(--transition-base);
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  display: flex;
+  align-items: center;
+}
+
+.top-bar__action-btn:hover {
+  opacity: 0.8;
+}
+
+.top-bar__action-btn:active {
+  transform: scale(0.95);
+}

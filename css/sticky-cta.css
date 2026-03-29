@@ -1,0 +1,95 @@
+/* ============================================================
+   STICKY-CTA.CSS — Banner flotante de pedido a domicilio
+   Block: .delivery-cta
+   ============================================================ */
+
+/* ── Block: contenedor posicionado ──────────────────────── */
+.delivery-cta {
+  position: fixed;
+  /* Justo encima del nav inferior */
+  bottom: var(--nav-bottom-height);
+  left: 0;
+  width: 100%;
+  padding: 0 var(--space-6);
+  z-index: 40;
+}
+
+/* ── Element: card interna con glassmorphism ─────────────── */
+.delivery-cta__card {
+  background-color: rgba(32, 31, 31, 0.9);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-radius: var(--radius-2xl);
+  padding: var(--space-4);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: var(--shadow-card);
+  border: 1px solid rgba(91, 64, 61, 0.1);
+}
+
+/* ── Element: bloque de texto ────────────────────────────── */
+.delivery-cta__text {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+
+.delivery-cta__label {
+  font-size: var(--text-xs);
+  font-weight: 700;
+  color: var(--color-tertiary);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.delivery-cta__heading {
+  font-size: var(--text-base);
+  font-weight: 700;
+  color: var(--color-on-surface);
+}
+
+/* ── Element: grupo de botones de contacto ───────────────── */
+.delivery-cta__actions {
+  display: flex;
+  gap: var(--space-2);
+}
+
+/* ── Element: botón circular de teléfono ─────────────────── */
+.delivery-cta__btn-phone {
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius-pill);
+  background-color: var(--color-surface-container-highest);
+  color: var(--color-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform var(--transition-fast);
+  text-decoration: none;
+}
+
+.delivery-cta__btn-phone:active {
+  transform: scale(0.9);
+}
+
+/* ── Element: botón de WhatsApp ──────────────────────────── */
+.delivery-cta__btn-whatsapp {
+  height: 40px;
+  padding: 0 var(--space-4);
+  border-radius: var(--radius-pill);
+  background-color: #25D366;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-family: var(--font-label);
+  font-size: var(--text-xs);
+  font-weight: 700;
+  text-decoration: none;
+  transition: transform var(--transition-fast);
+}
+
+.delivery-cta__btn-whatsapp:active {
+  transform: scale(0.9);
+}
