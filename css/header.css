@@ -24,12 +24,8 @@
 .top-bar__brand {
   display: flex;
   align-items: center;
-  gap: var(--space-3);
 }
 
-.top-bar__icon {
-  color: var(--color-primary);
-}
 
 .top-bar__title {
   font-family: var(--font-headline);

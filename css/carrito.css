@@ -1,0 +1,324 @@
+/* ============================================================
+   CARRITO.CSS — Panel lateral deslizante de pedido
+   Block: .cart
+   ============================================================ */
+
+/* ── Block: contenedor completo (overlay + drawer) ───────── */
+.cart {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  /* Invisible y sin interacción por defecto */
+  pointer-events: none;
+}
+
+/* ── Modifier: carrito abierto ───────────────────────────── */
+.cart--open {
+  pointer-events: all;
+}
+
+/* ── Element: overlay oscuro detrás del panel ────────────── */
+.cart__overlay {
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0);
+  transition: background-color var(--transition-slow);
+}
+
+.cart--open .cart__overlay {
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+/* ── Element: panel deslizante ───────────────────────────── */
+.cart__drawer {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: min(100%, 380px);
+  height: 100%;
+  background-color: var(--color-surface-container-low);
+  display: flex;
+  flex-direction: column;
+  /* Empieza fuera de pantalla a la derecha */
+  transform: translateX(100%);
+  transition: transform var(--transition-slow);
+}
+
+.cart--open .cart__drawer {
+  transform: translateX(0);
+}
+
+/* ── Element: cabecera del panel ─────────────────────────── */
+.cart__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--space-6);
+  border-bottom: 1px solid var(--color-outline-variant);
+  flex-shrink: 0;
+}
+
+.cart__title {
+  font-family: var(--font-headline);
+  font-size: var(--text-xl);
+  font-weight: 700;
+  color: var(--color-on-surface);
+}
+
+.cart__close-btn {
+  color: var(--color-on-surface-variant);
+  transition: color var(--transition-fast);
+  display: flex;
+  align-items: center;
+  padding: var(--space-1);
+  border-radius: var(--radius-lg);
+}
+
+.cart__close-btn:hover {
+  color: var(--color-on-surface);
+}
+
+/* ── Element: lista de ítems (zona scrolleable) ──────────── */
+.cart__list {
+  flex: 1;
+  overflow-y: auto;
+  padding: var(--space-4) var(--space-6);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+/* ── Element: ítem individual del carrito ────────────────── */
+.cart__item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3);
+  padding: var(--space-3);
+  background-color: var(--color-surface-container);
+  border-radius: var(--radius-lg);
+}
+
+.cart__item-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.cart__item-name {
+  font-weight: 600;
+  font-size: var(--text-base);
+  color: var(--color-on-surface);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.cart__item-note {
+  font-size: var(--text-xs);
+  color: var(--color-on-surface-variant);
+  margin-top: var(--space-1);
+}
+
+.cart__item-price {
+  font-family: var(--font-headline);
+  font-weight: 700;
+  color: var(--color-tertiary);
+  font-size: var(--text-base);
+  flex-shrink: 0;
+}
+
+/* ── Element: controles de cantidad ──────────────────────── */
+.cart__item-controls {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  flex-shrink: 0;
+}
+
+.cart__qty-btn {
+  width: 28px;
+  height: 28px;
+  border-radius: var(--radius-pill);
+  background-color: var(--color-surface-container-highest);
+  color: var(--color-on-surface);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: var(--text-lg);
+  line-height: 1;
+  transition: background-color var(--transition-fast);
+}
+
+.cart__qty-btn:hover {
+  background-color: var(--color-surface-bright);
+}
+
+.cart__qty-btn--remove {
+  color: var(--color-error);
+}
+
+.cart__qty-value {
+  font-weight: 600;
+  font-size: var(--text-base);
+  min-width: 1.25rem;
+  text-align: center;
+  color: var(--color-on-surface);
+}
+
+/* ── Element: estado vacío ───────────────────────────────── */
+.cart__empty {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-3);
+  flex: 1;
+  color: var(--color-on-surface-variant);
+  padding: var(--space-8);
+  text-align: center;
+}
+
+.cart__empty-icon {
+  font-size: 3rem;
+  opacity: 0.4;
+}
+
+/* Modifier: mostrar el estado vacío cuando el carrito está vacío */
+.cart--empty .cart__list     { display: none; }
+.cart--empty .cart__empty    { display: flex; }
+.cart--empty .cart__footer   { display: none; }
+
+/* ── Element: pie con total y botón de confirmar ─────────── */
+.cart__footer {
+  padding: var(--space-6);
+  border-top: 1px solid var(--color-outline-variant);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  flex-shrink: 0;
+}
+
+.cart__total-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.cart__total-label {
+  font-size: var(--text-base);
+  color: var(--color-on-surface-variant);
+  font-weight: 500;
+}
+
+.cart__total-amount {
+  font-family: var(--font-headline);
+  font-size: var(--text-2xl);
+  font-weight: 800;
+  color: var(--color-on-surface);
+}
+
+.cart__confirm-btn {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  padding: var(--space-4);
+  border-radius: var(--radius-lg);
+  background: var(--gradient-fire);
+  color: var(--color-on-primary-fixed);
+  font-family: var(--font-label);
+  font-size: var(--text-base);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  transition: transform var(--transition-fast),
+              opacity var(--transition-fast);
+}
+
+.cart__confirm-btn:active {
+  transform: scale(0.97);
+}
+
+/* ── Badge del carrito en el header ──────────────────────── */
+.top-bar__cart-btn {
+  position: relative;
+}
+
+.top-bar__cart-badge {
+  position: absolute;
+  top: -6px;
+  right: -8px;
+  background-color: var(--color-primary-container);
+  color: var(--color-on-primary-container);
+  font-size: 0.5rem;
+  font-weight: 700;
+  min-width: 16px;
+  height: 16px;
+  border-radius: var(--radius-pill);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 var(--space-1);
+  /* Oculto cuando está en 0 */
+  opacity: 0;
+  transform: scale(0);
+  transition: opacity var(--transition-base),
+              transform var(--transition-base);
+}
+
+.top-bar__cart-badge--visible {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* ── Badge en nav inferior ───────────────────────────────── */
+.bottom-nav__item--cart {
+  position: relative;
+}
+
+.bottom-nav__badge {
+  position: absolute;
+  top: 4px;
+  right: 8px;
+  background-color: var(--color-primary-container);
+  color: var(--color-on-primary-container);
+  font-size: 0.5rem;
+  font-weight: 700;
+  min-width: 16px;
+  height: 16px;
+  border-radius: var(--radius-pill);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 var(--space-1);
+  opacity: 0;
+  transform: scale(0);
+  transition: opacity var(--transition-base),
+              transform var(--transition-base);
+}
+
+.bottom-nav__badge--visible {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* ── Element: botón de borrar ítem completo ──────────────── */
+.cart__delete-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  color: var(--color-error);
+  opacity: 0.6;
+  transition: opacity var(--transition-fast);
+  padding: var(--space-1);
+}
+
+.cart__delete-btn:hover {
+  opacity: 1;
+}
+
+.cart__delete-btn .material-symbols-outlined {
+  font-size: 1.1rem;
+}

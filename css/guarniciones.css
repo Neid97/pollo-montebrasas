@@ -36,13 +36,13 @@
   letter-spacing: 0.1em;
   background-color: var(--color-surface-container-highest);
   color: var(--color-on-surface);
-  transition: background-color var(--transition-base),
-              color var(--transition-base);
-  cursor: default;
+  cursor: pointer;
 }
 
-/* ── Modifier: chip activo/seleccionado ──────────────────── */
+/* ── Modifier: chip seleccionado — estado permanente ─────── */
 .sides__chip--active {
   background-color: var(--color-primary-container);
   color: var(--color-on-primary-container);
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
 }
